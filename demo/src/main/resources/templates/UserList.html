@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<title>ユーザー一覧</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/users">ユーザー管理デモ</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="card card-primary mb-3">
+			<div class="card-header">
+				<h5 class="card-title">ユーザーリスト
+					<a href="/users/newUser" class="btn btn-success float-right">新規</a>
+				</h5>
+			</div>
+			<div class="card-body" th:if="!${users.size()}">
+				<p>データがありません。</p>
+			</div>
+			<div class="card-header">
+				<h5 class="card-title">ユーザー一覧</h5>
+			</div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th style="width: 10%">ID</th>
+						<th style="width: 10%">パスワード</th>
+						<th style="width: 10%">名前</th>
+						<th style="width: 10%">年齢</th>
+						<th style="width: 10%"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user:${users}" th:object="${user}">
+						<td th:text="*{userId}"></td>
+						<td th:text="*{password}"></td>
+						<td th:text="*{userName}"></td>
+						<td th:text="*{age}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="/js/jquery-3.4.1.min"></script>
+	<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
