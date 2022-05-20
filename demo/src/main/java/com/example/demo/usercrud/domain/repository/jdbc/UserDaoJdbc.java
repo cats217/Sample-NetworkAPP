@@ -1,11 +1,11 @@
-package com.example.demo.usercrud.repository.jdbc;
+package com.example.demo.usercrud.domain.repository.jdbc;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.example.demo.usercrud.domain.User;
-import com.example.demo.usercrud.repository.interfaces.UserDaoIF;
+import com.example.demo.usercrud.domain.object.User;
+import com.example.demo.usercrud.domain.repository.interfaces.UserDaoIF;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

@@ -1,9 +1,9 @@
-package com.example.demo.usercrud.controller;
+package com.example.demo.usercrud.controller.rest;
 
 import java.util.List;
 
-import com.example.demo.usercrud.domain.User;
-import com.example.demo.usercrud.service.UserService;
+import com.example.demo.usercrud.domain.object.User;
+import com.example.demo.usercrud.domain.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

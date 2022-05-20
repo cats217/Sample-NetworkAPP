@@ -1,8 +1,8 @@
-package com.example.demo.usercrud.repository.interfaces;
+package com.example.demo.usercrud.domain.repository.interfaces;
 
 import java.util.List;
 
-import com.example.demo.usercrud.domain.User;
+import com.example.demo.usercrud.domain.object.User;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;

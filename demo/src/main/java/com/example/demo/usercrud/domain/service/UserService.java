@@ -1,9 +1,9 @@
-package com.example.demo.usercrud.service;
+package com.example.demo.usercrud.domain.service;
 
 import java.util.List;
 
-import com.example.demo.usercrud.domain.User;
-import com.example.demo.usercrud.repository.interfaces.UserDaoIF;
+import com.example.demo.usercrud.domain.object.User;
+import com.example.demo.usercrud.domain.repository.interfaces.UserDaoIF;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

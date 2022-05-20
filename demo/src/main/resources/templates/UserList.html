@@ -12,7 +12,7 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/users">ユーザー管理デモ</a>
+				<a class="navbar-brand" href="/user/list">ユーザー管理デモ</a>
 			</div>
 		</div>
 	</nav>
@@ -20,10 +20,10 @@
 		<div class="card card-primary mb-3">
 			<div class="card-header">
 				<h5 class="card-title">ユーザーリスト
-					<a href="/users/newUser" class="btn btn-success float-right">新規</a>
+					<a href="/user/add" class="btn btn-success float-right">新規登録</a>
 				</h5>
 			</div>
-			<div class="card-body" th:if="!${users.size()}">
+			<div class="card-body" th:if="!${userlist.size()}">
 				<p>データがありません。</p>
 			</div>
 			<div class="card-header">
@@ -40,11 +40,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="user:${users}" th:object="${user}">
+					<tr th:each="user:${userlist}" th:object="${user}">
 						<td th:text="*{userId}"></td>
 						<td th:text="*{password}"></td>
 						<td th:text="*{userName}"></td>
 						<td th:text="*{age}"></td>
+						<td class="float-right">
+							<form th:action="@{/user/{id}(id=*{userId})}" th:method="delete">
+								<a class="btn btn-primary" th:href="@{/user/{id}(id=*{userId})}">詳細</a>
+								<a class="btn btn-primary" th:href="@{/user/{id}/edit(id=*{userId})}">変更</a>
+								<button class="btn btn-primary">削除</button>
+							</form>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -53,4 +60,5 @@
 	<script src="/js/jquery-3.4.1.min"></script>
 	<script src="/js/bootstrap.min.js"></script>
 </body>
+
 </html>
